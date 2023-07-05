@@ -15,7 +15,15 @@ const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 function App() {
     return (
-        <ClerkProvider publishableKey={clerkPubKey}>
+        <ClerkProvider publishableKey={clerkPubKey}
+                       appearance={
+                           {
+                               layout: {
+                                   helpPageUrl: "https://clerk.dev/support",
+                                   termsPageUrl: "https://clerk.dev/terms",
+                               }
+                           }
+                       }>
             <SignedIn>
                 <Welcome />
             </SignedIn>
